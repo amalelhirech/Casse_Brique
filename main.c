@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "jeu.h"
+#include <windows.h> 
 
 int main()
 {
@@ -45,6 +46,7 @@ int main()
             printf("PERDU ! La balle est tombee.\n");
             break;
         }
+        Sleep(400);
     }
 
     return 0;

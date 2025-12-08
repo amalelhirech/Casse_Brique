@@ -6,6 +6,7 @@ int main()
 {
     int score = 0;
     char grille[15][20];
+    
 
     creerGrille(grille);
 

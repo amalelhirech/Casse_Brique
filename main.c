@@ -7,9 +7,16 @@ int main()
 
     creerGrille(grille);
 
-    while (1)   
+    int balleColonne = 10;
+    int balleLigne = 10;
+
+    int directionX = 1;
+    int directionY = -1;
+    grille[balleLigne][balleColonne] = 'O';
+
+    while (1)
     {
-        
+
         for (int i = 0; i < 15; i++)
         {
             for (int j = 0; j < 20; j++)
@@ -20,8 +27,14 @@ int main()
         }
 
         plateforme(grille);
-
         
+        int resultat[4]; 
+        deplacerBalle(grille,balleColonne, balleLigne,directionX, directionY,resultat);
+
+        balleColonne = resultat[0];
+        balleLigne = resultat[1];
+        directionX = resultat[2];
+        directionY = resultat[3];
     }
 
     return 0;

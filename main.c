@@ -56,5 +56,23 @@ int main()
         Sleep(400);
     }
 
+    printf("Score final : %d\n", score);
+
+    char nom[50];
+    printf("Entrez votre nom  : ");
+    scanf("%s", nom);
+
+    FILE *f = fopen("scores.txt", "a");
+    if (f != NULL)
+    {
+        fprintf(f, "%s %d\n", nom, score);
+        fclose(f);
+        printf("Score enregistre dans scores.txt\n");
+    }
+    else
+    {
+        printf("Erreur : impossible d'ouvrir scores.txt\n");
+    }
+
     return 0;
 }

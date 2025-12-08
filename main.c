@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "jeu.h"
-#include <windows.h> 
+#include <windows.h>
 
 int main()
 {
@@ -29,6 +29,13 @@ int main()
             printf("\n");
         }
 
+        char touche = lireCommandeNonBloquante();
+        if (touche == 's')
+        {
+            printf("Vous avez quitte le jeu.\n");
+            break;
+        }
+
         plateforme(grille);
 
         int resultat[5];
@@ -39,7 +46,7 @@ int main()
         directionX = resultat[2];
         directionY = resultat[3];
 
-        score = score + resultat[4]; 
+        score = score + resultat[4];
 
         if (perdu(balleLigne))
         {

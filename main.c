@@ -6,7 +6,7 @@ int main()
 {
     int score = 0;
     char grille[15][20];
-    
+
 
     creerGrille(grille);
 
@@ -19,6 +19,7 @@ int main()
 
     while (1)
     {
+        system("cls");
         printf("Score : %d\n", score);
 
         for (int i = 0; i < 15; i++)

@@ -46,7 +46,7 @@ void plateforme(char grille[15][20])
     grille[ligne][debut + 2] = ' ';
     grille[ligne][debut + 3] = ' ';
 
-    if (touche == 'g' && debut > 0)
+    if (touche == 'q' && debut > 0)
         debut--;
 
     if (touche == 'd' && debut + 3 < 19)

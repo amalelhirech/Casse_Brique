@@ -28,22 +28,24 @@ void creerGrille (char grille[15][20])
 
 }
 
-/*void plateforme(char grille[50][30])
+void plateforme(char grille[15][20])
 {
-    char plateforme[4][1] = {"=","=","=","="};
     char choix;
     int idx;
-    scanf("%d", &choix)
-    if (choix == 'd')
+    scanf("%c", &choix);
+    for(int i = 0; i<=14; i++)
     {
-        for(int j = 0; j<=49; j++)
+        for(int j = 0; j<= 19; j++)
         {
-            idx = idx + 1
-        }
-        else 
-        {
-            idx = idx - 1
+            if(choix == 'd')
+            {
+                
+            }
+            else 
+            {
+
+            }
         }
     }
     
-}*/
+}

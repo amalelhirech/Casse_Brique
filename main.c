@@ -27,14 +27,20 @@ int main()
         }
 
         plateforme(grille);
-        
-        int resultat[4]; 
-        deplacerBalle(grille,balleColonne, balleLigne,directionX, directionY,resultat);
+
+        int resultat[4];
+        deplacerBalle(grille, balleColonne, balleLigne, directionX, directionY, resultat);
 
         balleColonne = resultat[0];
         balleLigne = resultat[1];
         directionX = resultat[2];
         directionY = resultat[3];
+
+        if (perdu(balleLigne))
+        {
+            printf("PERDU ! La balle est tombee.\n");
+            break; 
+        }
     }
 
     return 0;

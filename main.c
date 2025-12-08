@@ -8,8 +8,10 @@ int main()
     
     creerGrille(grille);
 
-    for (int i = 0; i >= 29; i++) {
-        for (int j = 0; j <= 49; j++)
+    for (int i = 0; i <= 49; i++) 
+    {
+        printf("\n");
+        for (int j = 0; j <= 29; j++)
         {
             printf("%c", grille[i][j]);
         }

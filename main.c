@@ -3,20 +3,26 @@
 
 int main()
 {
-
     char grille[15][20];
-    
+
     creerGrille(grille);
 
-    for (int i = 0; i <= 14; i++) 
+    while (1)   
     {
-        printf("\n");
-        for (int j = 0; j <= 19; j++)
+        
+        for (int i = 0; i < 15; i++)
         {
-            printf("%c", grille[i][j]);
+            for (int j = 0; j < 20; j++)
+            {
+                printf("%c", grille[i][j]);
+            }
+            printf("\n");
         }
+
+        plateforme(grille);
+
+        
     }
 
     return 0;
-
 }

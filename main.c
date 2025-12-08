@@ -4,14 +4,14 @@
 int main()
 {
 
-    char grille[50][30];
+    char grille[15][20];
     
     creerGrille(grille);
 
-    for (int i = 0; i <= 49; i++) 
+    for (int i = 0; i <= 14; i++) 
     {
         printf("\n");
-        for (int j = 0; j <= 29; j++)
+        for (int j = 0; j <= 19; j++)
         {
             printf("%c", grille[i][j]);
         }

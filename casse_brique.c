@@ -1,21 +1,20 @@
 #include <stdio.h>
 #include "jeu.h"
 
-void creerGrille (char grille[15][20])
+void creerGrille(char grille[15][20])
 {
-    for(int i=0; i<= 14; i++)
+    for(int i = 0; i < 15; i++)
     {
-        for (int j = 0; j<=19; j++)
+        for (int j = 0; j < 20; j++)
         {
-            if(i == 0)
-            {
-                grille[0][j] = '#';    
-            }
+            if (i == 0)
+                grille[i][j] = '_';     
+
+            else if (i == 2 || i == 3 || i == 4 )
+                grille[i][j] = '#';      
+
             else
-            {
-                grille[i][j] = ' ';
-            }
-            
+                grille[i][j] = ' ';     
         }
     }
 
@@ -23,7 +22,6 @@ void creerGrille (char grille[15][20])
     grille[14][6] = '=';
     grille[14][7] = '=';
     grille[14][8] = '=';
-
 }
 
 void plateforme(char grille[15][20])
@@ -60,7 +58,10 @@ void plateforme(char grille[15][20])
     grille[ligne][debut + 3] = '=';
 }
 
-void deplacerBalle(char grille[15][20],int balleColonne, int balleLigne,int directionX, int directionY,int resultat[4])
+void deplacerBalle(char grille[15][20],
+                   int balleColonne, int balleLigne,
+                   int directionX, int directionY,
+                   int resultat[5])
 {
     grille[balleLigne][balleColonne] = ' ';
 
@@ -76,6 +77,14 @@ void deplacerBalle(char grille[15][20],int balleColonne, int balleLigne,int dire
     x = balleColonne + directionX;
     y = balleLigne + directionY;
 
+    int point = 0;
+    if (grille[y][x] == '#')
+    {
+        grille[y][x] = ' ';   
+        directionY = -directionY;
+        point = 1;           
+    }
+
     if (y == 14 && grille[14][x] == '=')
         directionY = -directionY;
 
@@ -85,6 +94,7 @@ void deplacerBalle(char grille[15][20],int balleColonne, int balleLigne,int dire
     resultat[1] = y;
     resultat[2] = directionX;
     resultat[3] = directionY;
+    resultat[4] = point;   
 }
 
 int perdu(int balleLigne)
@@ -92,5 +102,5 @@ int perdu(int balleLigne)
     if (balleLigne > 14)
         return 1;  
 
-    return 0;       
+    return 0;      
 }

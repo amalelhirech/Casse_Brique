@@ -47,10 +47,10 @@ void plateforme(char grille[15][20])
     grille[ligne][debut + 3] = ' ';
 
     if (touche == 'q' && debut > 0)
-        debut--;
+        debut = debut - 2;
 
     if (touche == 'd' && debut + 3 < 19)
-        debut++;
+        debut = debut + 2;
 
     grille[ligne][debut] = '=';
     grille[ligne][debut + 1] = '=';

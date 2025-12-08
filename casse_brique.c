@@ -24,8 +24,6 @@ void creerGrille (char grille[15][20])
     grille[14][7] = '=';
     grille[14][8] = '=';
 
-
-
 }
 
 void plateforme(char grille[15][20])
@@ -59,4 +57,32 @@ void plateforme(char grille[15][20])
     grille[ligne][debut + 1] = '=';
     grille[ligne][debut + 2] = '=';
     grille[ligne][debut + 3] = '=';
+}
+
+
+void deplacerBalle(char grille[15][20],int balleColonne, int balleLigne,int directionX, int directionY,int resultat[4])
+{
+    grille[balleLigne][balleColonne] = ' ';
+
+    int x = balleColonne + directionX;
+    int y = balleLigne + directionY;
+
+    if (x < 0 || x >= 20)
+        directionX = -directionX;
+
+    if (y < 0)
+        directionY = -directionY;
+
+    x = balleColonne + directionX;
+    y = balleLigne + directionY;
+
+    if (y == 14 && grille[14][x] == '=')
+        directionY = -directionY;
+
+    grille[y][x] = 'O';
+
+    resultat[0] = x;
+    resultat[1] = y;
+    resultat[2] = directionX;
+    resultat[3] = directionY;
 }

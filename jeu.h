@@ -5,5 +5,5 @@
 
 
 void creerGrille (char grille[15][20]);
-void plateforme(char grille[50][30]);
+void plateforme(char grille[15][20]);
 #endif 

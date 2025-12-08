@@ -3,6 +3,7 @@
 
 int main()
 {
+    int score = 0;
     char grille[15][20];
 
     creerGrille(grille);
@@ -16,6 +17,7 @@ int main()
 
     while (1)
     {
+        printf("Score : %d\n", score);
 
         for (int i = 0; i < 15; i++)
         {
@@ -28,7 +30,7 @@ int main()
 
         plateforme(grille);
 
-        int resultat[4];
+        int resultat[5];
         deplacerBalle(grille, balleColonne, balleLigne, directionX, directionY, resultat);
 
         balleColonne = resultat[0];
@@ -36,10 +38,12 @@ int main()
         directionX = resultat[2];
         directionY = resultat[3];
 
+        score = score + resultat[4]; 
+
         if (perdu(balleLigne))
         {
             printf("PERDU ! La balle est tombee.\n");
-            break; 
+            break;
         }
     }
 

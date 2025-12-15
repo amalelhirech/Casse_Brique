@@ -2,6 +2,8 @@
 #include "jeu.h"
 #include <windows.h>
 
+// il aurait été bien d'avoir un peu plus de fonctions, le main est un peu lourd
+
 int main()
 {
     int score = 0;
@@ -21,7 +23,7 @@ int main()
     {
         system("cls");
         printf("Score : %d\n", score);
-
+    
         for (int i = 0; i < 15; i++)
         {
             for (int j = 0; j < 20; j++)
